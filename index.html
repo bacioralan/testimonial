@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Erfahrungen · Alan Bacior Coaching</title>
+<meta name="description" content="Vertrau nicht meinen Worten – vertrau denen, die den Weg gegangen sind. Echte Erfahrungen aus der Zusammenarbeit mit Alan Bacior.">
+<style>
+  /* Schriften, Vorschaubilder und Screenshots liegen auf alanbacior.de (eigener Server, Vercel).
+     Keine Verbindung zu Google Fonts, YouTube oder fremden CDNs beim Laden der Seite. */
+  @font-face{font-family:'Poppins';src:url('https://www.alanbacior.de/assets/fonts/poppins-latin-600-normal.woff2') format('woff2');font-weight:600;font-display:swap}
+  @font-face{font-family:'Poppins';src:url('https://www.alanbacior.de/assets/fonts/poppins-latin-700-normal.woff2') format('woff2');font-weight:700;font-display:swap}
+  @font-face{font-family:'Poppins';src:url('https://www.alanbacior.de/assets/fonts/poppins-latin-800-normal.woff2') format('woff2');font-weight:800;font-display:swap}
+  @font-face{font-family:'Inter';src:url('https://www.alanbacior.de/assets/fonts/inter-latin-400-normal.woff2') format('woff2');font-weight:400;font-display:swap}
+  @font-face{font-family:'Inter';src:url('https://www.alanbacior.de/assets/fonts/inter-latin-500-normal.woff2') format('woff2');font-weight:500;font-display:swap}
+  @font-face{font-family:'Inter';src:url('https://www.alanbacior.de/assets/fonts/inter-latin-600-normal.woff2') format('woff2');font-weight:600;font-display:swap}
+  @font-face{font-family:'Inter';src:url('https://www.alanbacior.de/assets/fonts/inter-latin-700-normal.woff2') format('woff2');font-weight:700;font-display:swap}
+  :root{
+    --eggshell:#F3EFE6;
+    --eggshell-dim:#E9E3D3;
+    --anthracite:#2B2F2A;
+    --anthracite-2:#363B33;
+    --ink:#22251F;
+    --sage:#7C8C73;
+    --sage-light:#AEBBA3;
+    --sage-dim:rgba(124,140,115,.12);
+    --rust:#B5533C;
+    --cream:#F2EFE7;
+    --cream-soft:rgba(242,239,231,.72);
+    --radius-lg:26px;
+    --radius-md:16px;
+    --font-display:'Poppins',sans-serif;
+    --font-body:'Inter',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--eggshell);color:var(--ink);font-family:var(--font-body);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+  .narrow{max-width:680px;margin:0 auto;padding:0 20px}
+
+  /* ---------- Buttons ---------- */
+  .btn{display:inline-block;background:var(--sage);color:#fff;font-weight:700;font-size:17px;padding:17px 38px;border-radius:999px;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;box-shadow:0 10px 26px rgba(124,140,115,.3)}
+  .btn:hover{background:#6d7c65;transform:translateY(-2px);box-shadow:0 14px 32px rgba(124,140,115,.4)}
+  .btn-note{display:block;margin-top:14px;font-size:14px;color:rgba(34,37,31,.5)}
+  .on-dark .btn-note{color:rgba(242,239,231,.55)}
+
+  /* ---------- Sections ---------- */
+  .kicker{display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:18px}
+  .section-head{text-align:center;padding:104px 20px 48px}
+  .section-head h2{font-family:var(--font-display);font-weight:700;font-size:clamp(24px,3.4vw,34px);line-height:1.25}
+  .section-head p{margin:16px auto 0;max-width:560px;color:rgba(34,37,31,.65);font-size:17px}
+
+  /* ---------- 1 · Hero ---------- */
+  .hero{background:var(--anthracite);color:var(--cream);padding:84px 0 150px;position:relative;overflow:hidden;text-align:center}
+  .hero::before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(124,140,115,.22),transparent 65%);top:-220px;right:-160px}
+  .hero::after{content:"";position:absolute;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(181,83,60,.13),transparent 65%);bottom:-200px;left:-140px}
+  .hero .wrap{position:relative;z-index:1}
+  .hero .hero-kicker{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sage-light);border:1px solid rgba(174,187,163,.3);border-radius:999px;padding:7px 18px;margin-bottom:30px}
+  .hero h1{font-family:var(--font-display);font-weight:800;font-size:clamp(29px,4.4vw,46px);line-height:1.18;max-width:820px;margin:0 auto}
+  .hero h1 em{font-style:normal;color:var(--sage-light)}
+  .hero p.sub{color:var(--cream-soft);font-size:clamp(16px,2vw,19px);max-width:580px;margin:26px auto 0;line-height:1.75}
+  .hero .cta-zone{margin-top:38px}
+
+  /* ---------- 2 · Featured Video (ragt in den Hero) ---------- */
+  .featured{margin-top:-84px;position:relative;z-index:2}
+  .featured-inner{max-width:820px;margin:0 auto}
+  .yt{position:relative;width:100%;padding-top:56.25%;border-radius:var(--radius-md);overflow:hidden;cursor:pointer;background:#000;box-shadow:0 12px 32px rgba(34,37,31,.13)}
+  .yt img.thumb{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:transform .3s ease}
+  .yt:hover img.thumb{transform:scale(1.04)}
+  .yt .shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.45),rgba(0,0,0,.03) 55%)}
+  .yt .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(0,0,0,.3);transition:transform .2s ease,background .2s ease}
+  .yt:hover .play{transform:translate(-50%,-50%) scale(1.08);background:var(--rust)}
+  .yt .play svg{width:22px;height:22px;fill:#fff;margin-left:3px}
+  .yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .featured .yt{border-radius:var(--radius-lg);box-shadow:0 26px 64px rgba(34,37,31,.24)}
+  .featured .yt .play{width:78px;height:78px}
+  .featured .yt .play svg{width:28px;height:28px}
+  .v-caption{margin:16px 6px 0}
+  .v-caption strong{display:block;font-family:var(--font-display);font-weight:600;font-size:16.5px;line-height:1.4}
+  .v-caption span{font-size:14px;color:rgba(34,37,31,.55)}
+  .featured .v-caption{text-align:center;margin-top:22px}
+  .featured .v-caption strong{font-size:19px;font-weight:700}
+
+  /* ---------- 3 · Video-Grid ---------- */
+  .v-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:44px 26px;margin-top:72px}
+
+  /* ---------- CTA-Blöcke (ruhig, viel Weißraum) ---------- */
+  .cta-block{text-align:center;padding:96px 20px}
+  .cta-block h2{font-family:var(--font-display);font-weight:700;font-size:clamp(23px,3.2vw,32px);line-height:1.3}
+  .cta-block p{margin:14px auto 0;max-width:480px;color:rgba(34,37,31,.65);font-size:17px}
+  .cta-block .btn{margin-top:36px}
+
+  /* ---------- 4 · Problem-Identifikation (zurückgenommen) ---------- */
+  .problem{padding-bottom:24px}
+  .p-list{max-width:640px;margin:0 auto}
+  .p-item{display:flex;gap:18px;align-items:baseline;padding:20px 6px;border-bottom:1px solid rgba(34,37,31,.09)}
+  .p-item:last-child{border-bottom:none}
+  .p-item .dot{flex:0 0 7px;width:7px;height:7px;border-radius:50%;background:var(--sage);position:relative;top:-2px}
+  .p-item p{font-size:17px;color:rgba(34,37,31,.85)}
+  .p-item strong{font-weight:600;color:var(--ink)}
+  .p-close{text-align:center;max-width:520px;margin:52px auto 0;font-size:18px;line-height:1.75}
+  .p-close strong{color:var(--rust);font-weight:600}
+
+  /* ---------- 5 · Vorher/Nachher (leicht, hell) ---------- */
+  .bn-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:860px;margin:0 auto}
+  .bn-col{border-radius:var(--radius-lg);padding:38px 34px;background:transparent;border:1px solid rgba(34,37,31,.12)}
+  .bn-after{background:var(--sage-dim);border-color:rgba(124,140,115,.25)}
+  .bn-col h3{font-family:var(--font-display);font-weight:700;font-size:18px;margin-bottom:18px;color:rgba(34,37,31,.7)}
+  .bn-after h3{color:var(--sage)}
+  .bn-col ul{list-style:none}
+  .bn-col li{padding:9px 0;font-size:16.5px;color:rgba(34,37,31,.75)}
+  .bn-after li{color:var(--ink);font-weight:500}
+  @media (max-width:720px){.bn-grid{grid-template-columns:1fr}}
+
+  /* ---------- 6 · Bewertungen ---------- */
+  .masonry{columns:3;column-gap:24px}
+  .masonry .t-card{break-inside:avoid;margin-bottom:24px;background:#fff;border-radius:var(--radius-md);padding:10px;box-shadow:0 10px 30px rgba(34,37,31,.07);transition:transform .18s ease,box-shadow .18s ease}
+  .masonry .t-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(34,37,31,.12)}
+  .masonry img{display:block;width:100%;height:auto;border-radius:calc(var(--radius-md) - 4px)}
+  @media (max-width:900px){.masonry{columns:2}}
+  @media (max-width:580px){.masonry{columns:1}}
+
+  /* ---------- 8 · Warum (Box) ---------- */
+  .why{max-width:900px;margin:104px auto 0;background:var(--eggshell-dim);border-radius:var(--radius-lg);padding:72px 48px}
+  .why h2{font-family:var(--font-display);font-weight:700;font-size:clamp(24px,3.2vw,32px);line-height:1.3;text-align:center;max-width:600px;margin:0 auto 40px}
+  .why p{max-width:640px;margin:0 auto 22px;font-size:17.5px;line-height:1.8}
+  .why p:last-child{margin-bottom:0}
+  .why em{font-style:normal;color:var(--rust);font-weight:600}
+  @media (max-width:600px){.why{padding:52px 26px;margin-top:80px}}
+
+  /* ---------- 9 · FAQ ---------- */
+  .faq{max-width:720px;margin:0 auto;padding:0 20px}
+  .faq details{border-bottom:1px solid rgba(34,37,31,.1)}
+  .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 4px;font-weight:600;font-size:17px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-family:var(--font-display);font-weight:600;font-size:22px;color:var(--sage);flex:0 0 auto;transition:transform .2s ease}
+  .faq details[open] summary::after{transform:rotate(45deg);color:var(--rust)}
+  .faq .a{padding:0 4px 26px;color:rgba(34,37,31,.75);font-size:16.5px;line-height:1.75;max-width:640px}
+
+  /* ---------- 10 · Finale ---------- */
+  .final{background:var(--anthracite);color:var(--cream);text-align:center;padding:110px 20px;margin-top:110px;position:relative;overflow:hidden}
+  .final::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(124,140,115,.2),transparent 65%);bottom:-240px;right:-160px}
+  .final .inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
+  .final h2{font-family:var(--font-display);font-weight:800;font-size:clamp(26px,3.8vw,38px);line-height:1.25}
+  .final p{color:var(--cream-soft);font-size:18px;line-height:1.85;margin:26px auto 38px}
+
+  footer{background:var(--anthracite);color:rgba(242,239,231,.4);text-align:center;font-size:14px;padding:0 20px 46px}
+  footer a{color:rgba(242,239,231,.6);text-decoration:none}
+  footer a:hover{color:var(--cream)}
+  footer .alt{margin-bottom:14px;font-size:15px;color:rgba(242,239,231,.55)}
+  footer .legal{margin-top:10px}
+  footer .legal a{text-decoration:underline;text-underline-offset:3px}
+
+  /* ---------- Sticky Mobile CTA ---------- */
+  .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(43,47,42,.96);backdrop-filter:blur(8px);display:none;text-align:center;transform:translateY(110%);transition:transform .3s ease}
+  .sticky-cta.show{transform:translateY(0)}
+  .sticky-cta a{display:block;background:var(--sage);color:#fff;font-weight:700;font-size:16px;padding:14px;border-radius:999px;text-decoration:none}
+  @media (max-width:760px){
+    .sticky-cta{display:block}
+    .final{padding-bottom:140px}
+  }
+
+  @media (max-width:600px){
+    .hero{padding:64px 0 130px}
+    .section-head{padding:80px 16px 40px}
+    .cta-block{padding:76px 16px}
+    .v-grid{gap:36px 20px;margin-top:56px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== 1 · HERO (leicht, ein Gedanke, ein CTA) ========== -->
+<header class="hero on-dark">
+  <div class="wrap">
+    <span class="hero-kicker">Erfahrungen</span>
+    <h1>Vertrau nicht meinen Worten – <em>vertrau denen, die den Weg gegangen sind.</em></h1>
+    <p class="sub">Diese Menschen standen genau dort, wo du heute stehst: äußerlich funktionierend, innerlich feststeckend. Hier erzählen sie, was sich verändert hat.</p>
+    <div class="cta-zone">
+      <a class="btn" href="https://calendly.com/alanbacior/klarheits-coaching" target="_blank" rel="noopener">Kostenlos herausfinden, ob ich dir helfen kann</a>
+      <span class="btn-note">Kostenfrei · Online · Kein Verkaufsdruck</span>
+    </div>
+  </div>
+</header>
+
+<!-- ========== 2 · HAUPT-TESTIMONIAL (direkt nach dem Hero) ========== -->
+<section class="featured">
+  <div class="wrap">
+    <div class="featured-inner">
+      <div class="yt" data-id="Xy2tANoa4uA">
+        <img class="thumb" src="https://www.alanbacior.de/assets/img/video-jenny.jpg" alt="Jennys Erfahrung – Video abspielen" loading="eager">
+        <div class="shade"></div>
+        <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+      <div class="v-caption">
+        <strong>Jennys Geschichte: Wieder bei sich ankommen – mit mehr Mut als je zuvor</strong>
+        <span>Jenny · Mehrmonatige 1:1-Begleitung</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 3 · WEITERE VIDEO-TESTIMONIALS ========== -->
+<section>
+  <div class="section-head" style="padding-top:88px">
+    <h2>Echte Stimmen. Echte Veränderung.</h2>
+    <p>Klick auf ein Video und hör selbst, was die Zusammenarbeit verändert hat.</p>
+  </div>
+  <div class="wrap">
+    <!-- TODO: Reihenfolge strategisch anpassen (stärkste → emotionalste → skeptischer Kunde → …),
+         sobald die Kernaussagen der Videos gesichtet sind. Karten einfach umsortieren. -->
+    <div class="v-grid" style="margin-top:0">
+      <div>
+        <div class="yt" data-id="TRwkLgVtjoc">
+          <img class="thumb" src="https://www.alanbacior.de/assets/img/video-susi.jpg" alt="Susis Erfahrung – Video abspielen" loading="lazy">
+          <div class="shade"></div>
+          <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="v-caption">
+          <strong>Susi: Ein Perspektivwechsel – und das Problem war in Minuten entwirrt</strong>
+          <span>Susi Kaese · 1:1-Session</span>
+        </div>
+      </div>
+      <div>
+        <div class="yt" data-id="6TKc7YQZlsw">
+          <img class="thumb" src="https://www.alanbacior.de/assets/img/video-elena.jpg" alt="Elenas Erfahrung – Video abspielen" loading="lazy">
+          <div class="shade"></div>
+          <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="v-caption">
+          <strong>Elena: Unbewusste Blockaden abgelegt – und seitdem viel freier</strong>
+          <span>Elena Stolz · 1:1-Session</span>
+        </div>
+      </div>
+      <div>
+        <div class="yt" data-id="rCzPYhSXbhs">
+          <img class="thumb" src="https://www.alanbacior.de/assets/img/video-kendy.jpg" alt="Kendys Erfahrung – Video abspielen" loading="lazy">
+          <div class="shade"></div>
+          <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="v-caption">
+          <strong>Kendy: Ein Thema aufgelöst – und voller Freude und Leichtigkeit</strong>
+          <span>Kendy Nordt · 1:1-Session</span>
+        </div>
+      </div>
+      <div>
+        <div class="yt" data-id="CF3XPPq_bpc">
+          <img class="thumb" src="https://www.alanbacior.de/assets/img/video-michaela.jpg" alt="Michaelas Erfahrung – Video abspielen" loading="lazy">
+          <div class="shade"></div>
+          <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="v-caption">
+          <strong>Michaela: Die innere Handbremse gelöst – und heute ihre Freiheit leben</strong>
+          <span>Michaela Beck · 1:1-Coaching</span>
+        </div>
+      </div>
+      <div>
+        <div class="yt" data-id="O-VVq5M_AC4">
+          <img class="thumb" src="https://www.alanbacior.de/assets/img/video-anna.jpg" alt="Annas Erfahrung – Video abspielen" loading="lazy">
+          <div class="shade"></div>
+          <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="v-caption">
+          <strong>Anna: An die Wurzel gegangen – und befreit wieder rausgekommen</strong>
+          <span>Anna Sunnus · 1:1-Session</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA 1 ========== -->
+<section class="cta-block">
+  <h2>Willst du das auch erleben?</h2>
+  <p>Dann buche dir dein kostenloses Klarheitsgespräch.</p>
+  <a class="btn" href="https://calendly.com/alanbacior/klarheits-coaching" target="_blank" rel="noopener">Jetzt unverbindliches Erstgespräch sichern</a>
+  <span class="btn-note">Kostenfrei · Online · Kein Verkaufsdruck</span>
+</section>
+
+<!-- ========== 4 · PROBLEM-IDENTIFIKATION (ruhig, schmal) ========== -->
+<section class="problem">
+  <div class="section-head" style="padding-top:40px">
+    <span class="kicker">Kommt dir das bekannt vor?</span>
+    <h2>Vielleicht erkennst du dich hier wieder</h2>
+  </div>
+  <div class="narrow">
+    <div class="p-list">
+      <div class="p-item"><span class="dot"></span><p><strong>Ständiges Grübeln</strong> – dein Kopf kommt nicht zur Ruhe, abends, morgens, mitten im Gespräch.</p></div>
+      <div class="p-item"><span class="dot"></span><p><strong>Angst vor Gesprächen</strong> – du schiebst Konflikte und klärende Worte auf, weil sie sich zu groß anfühlen.</p></div>
+      <div class="p-item"><span class="dot"></span><p><strong>Unsicherheit</strong> – du zweifelst an Entscheidungen, und noch mehr an dir selbst.</p></div>
+      <div class="p-item"><span class="dot"></span><p><strong>Innere Unruhe</strong> – ein Getrieben-Sein, das bleibt, auch wenn eigentlich „alles okay" ist.</p></div>
+      <div class="p-item"><span class="dot"></span><p><strong>Schlechter Schlaf</strong> – du liegst wach, weil die Gedanken lauter sind als die Müdigkeit.</p></div>
+      <div class="p-item"><span class="dot"></span><p><strong>Das Gefühl festzustecken</strong> – du funktionierst, aber du lebst nicht das Leben, das sich richtig anfühlt.</p></div>
+    </div>
+    <p class="p-close">Wenn du beim Lesen innerlich genickt hast: <strong>Du bist nicht falsch.</strong> Du bist nur schon zu lange allein damit.</p>
+  </div>
+</section>
+
+<!-- ========== 5 · VORHER / NACHHER (leicht) ========== -->
+<section>
+  <div class="section-head">
+    <h2>Zwischen diesen beiden Zuständen liegt kein anderes Leben.<br>Nur ein anderer Umgang mit dir selbst.</h2>
+  </div>
+  <div class="wrap">
+    <div class="bn-grid">
+      <div class="bn-col">
+        <h3>So fühlt es sich heute an</h3>
+        <ul>
+          <li>Aufwachen – und der Kopf ist schon voll.</li>
+          <li>Entscheidungen aufschieben, aus Angst vor der falschen.</li>
+          <li>Nach außen lächeln, innen leer.</li>
+          <li>Abende, die im Grübeln verschwinden.</li>
+        </ul>
+      </div>
+      <div class="bn-col bn-after">
+        <h3>So kann es sich anfühlen</h3>
+        <ul>
+          <li>Aufwachen – und wissen, wofür.</li>
+          <li>Entscheidungen treffen, ohne dich zu verlieren.</li>
+          <li>Sagen, was du denkst. Ruhig und klar.</li>
+          <li>Abende, die dir gehören.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA 2 ========== -->
+<section class="cta-block">
+  <h2>Der Weg dazwischen beginnt mit einem Gespräch.</h2>
+  <a class="btn" href="https://calendly.com/alanbacior/klarheits-coaching" target="_blank" rel="noopener">Den ersten Schritt gehen</a>
+  <span class="btn-note">Ein Gespräch. Keine Verpflichtung.</span>
+</section>
+
+<!-- ========== 6 · BEWERTUNGEN ========== -->
+<section>
+  <div class="section-head">
+    <span class="kicker">Schwarz auf weiß</span>
+    <h2>Was Klienten schreiben</h2>
+    <p>Nachrichten und Bewertungen – so wie sie ankamen.</p>
+  </div>
+  <div class="wrap">
+    <div class="masonry" style="margin-top:0">
+      <div class="t-card"><img src="https://www.alanbacior.de/assets/img/review-saskia.jpg" alt="Erfahrungsbericht von Saskia (Trustpilot)" loading="lazy"></div>
+      <div class="t-card"><img src="https://www.alanbacior.de/assets/img/review-nicole.jpg" alt="Erfahrungsbericht von Nicole" loading="lazy"></div>
+      <div class="t-card"><img src="https://www.alanbacior.de/assets/img/review-julienne.jpg" alt="Feedback von Julienne" loading="lazy"></div>
+      <div class="t-card"><img src="https://www.alanbacior.de/assets/img/review-tanja.jpg" alt="Erfahrungsbericht von Tanja (Facebook)" loading="lazy"></div>
+      <div class="t-card"><img src="https://www.alanbacior.de/assets/img/review-tina.jpg" alt="Erfahrungsbericht von Tina (Trustpilot)" loading="lazy"></div>
+      <div class="t-card"><img src="https://www.alanbacior.de/assets/img/review-ingrid.jpg" alt="Erfahrungsbericht von Ingrid (Trustpilot)" loading="lazy"></div>
+      <div class="t-card"><img src="https://www.alanbacior.de/assets/img/review-nadja.jpg" alt="Erfahrungsbericht von Nadja (Facebook)" loading="lazy"></div>
+      <div class="t-card"><img src="https://www.alanbacior.de/assets/img/review-anja.jpg" alt="Erfahrungsbericht von Anja (WhatsApp)" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 8 · WARUM DIESER WEG FUNKTIONIERT (Box) ========== -->
+<section class="wrap">
+  <div class="why">
+    <h2>Warum dieser Weg funktioniert,<br>wo anderes gescheitert ist</h2>
+    <p>Vielleicht hast du schon Bücher gelesen, Podcasts gehört, dir fest vorgenommen, „ab Montag anders zu denken". Und trotzdem hat sich nichts verändert. Das liegt nicht an dir – sondern daran, dass <em>Wissen allein keine Muster verändert</em>. Muster verändern sich im echten Hinschauen, nicht im Konsumieren.</p>
+    <p>Genau deshalb arbeite ich nicht mit Standard-Programmen, sondern 1:1. Wir schauen gemeinsam dorthin, wo dein Leben gerade Energie verliert – ehrlich, ohne Bewertung – und lösen die Blockaden dort, wo sie tatsächlich sitzen. Nicht an der Oberfläche der Symptome.</p>
+    <p>Und weil Veränderung Vertrauen braucht, beginnt alles mit einem kostenlosen Gespräch. Kein Skript, kein Druck. Nur du, ich und ein klarer Blick auf deinen nächsten Schritt. <em>Wenn ich dir nicht helfen kann, sage ich dir das.</em></p>
+  </div>
+</section>
+
+<!-- ========== 9 · FAQ ========== -->
+<section>
+  <div class="section-head">
+    <span class="kicker">Häufige Fragen</span>
+    <h2>Deine Fragen. Ehrlich beantwortet.</h2>
+  </div>
+  <div class="faq">
+    <details>
+      <summary>Für wen eignet sich die Begleitung?</summary>
+      <div class="a">Für Menschen, die spüren, dass sie feststecken – im Grübeln, in Unsicherheit, in einem Leben, das nach außen funktioniert, aber innerlich nicht stimmt. Du brauchst keine „Krise", um zu starten. Nur die Bereitschaft, ehrlich hinzuschauen.</div>
+    </details>
+    <details>
+      <summary>Wie läuft das kostenlose Erstgespräch ab?</summary>
+      <div class="a">Wir sprechen etwa 45 Minuten per Video-Call. Du erzählst, wo du gerade stehst, ich stelle Fragen und wir schauen gemeinsam, was dein eigentliches Thema ist. Am Ende weißt du, was dein nächster Schritt ist – ob mit mir oder ohne mich.</div>
+    </details>
+    <details>
+      <summary>Was passiert, wenn wir nicht zusammenpassen?</summary>
+      <div class="a">Dann sage ich dir das offen – und wenn möglich, in welche Richtung du stattdessen schauen kannst. Ein Erstgespräch ist eine Standortbestimmung, kein Verkaufsgespräch.</div>
+    </details>
+    <details>
+      <summary>Funktioniert das online?</summary>
+      <div class="a">Ja, die gesamte Begleitung findet per Video-Call statt. Viele Klienten empfinden das sogar als leichter: vertraute Umgebung, keine Anfahrt, volle Konzentration auf das Gespräch.</div>
+    </details>
+    <details>
+      <summary>Muss ich etwas vorbereiten?</summary>
+      <div class="a">Nein. Es hilft, wenn du dir vorher kurz überlegst, was sich in deinem Leben am dringendsten verändern soll – aber auch das finden wir sonst gemeinsam heraus. Ein ruhiger Ort und 45 ungestörte Minuten reichen.</div>
+    </details>
+    <details>
+      <summary>Wie lange dauert eine Begleitung?</summary>
+      <div class="a">Das hängt von deinem Thema und deinem Tempo ab. Veränderung ist kein Sprint – aber sie darf auch kein endloses Projekt sein. Den passenden Rahmen besprechen wir konkret im Erstgespräch, damit du von Anfang an weißt, worauf du dich einlässt.</div>
+    </details>
+    <details>
+      <summary>Was kostet die Begleitung?</summary>
+      <div class="a">Das Erstgespräch ist komplett kostenlos. Die Investition für eine Begleitung hängt von Umfang und Dauer ab. Ich nenne dir im Gespräch transparent alle Zahlen, bevor du dich entscheidest. Es gibt keine versteckten Kosten und keinen Abschlussdruck.</div>
+    </details>
+    <details>
+      <summary>Wie schnell merke ich Veränderungen?</summary>
+      <div class="a">Viele Klienten beschreiben schon nach den ersten Gesprächen mehr Klarheit – einfach, weil zum ersten Mal jemand strukturiert mit ihnen hinschaut. Tiefere Muster brauchen länger. Ich verspreche dir keine Wunder in einer Woche, sondern Veränderung, die bleibt.</div>
+    </details>
+    <details>
+      <summary>Ist Coaching das Richtige – oder brauche ich eine Therapie?</summary>
+      <div class="a">Coaching ersetzt keine Psychotherapie. Wenn im Gespräch deutlich wird, dass dein Thema therapeutische Unterstützung braucht, sage ich dir das ehrlich. Genau dafür ist das Erstgespräch da: herauszufinden, was dir wirklich hilft.</div>
+    </details>
+  </div>
+</section>
+
+<!-- ========== 10 · EMOTIONALER ABSCHLUSS + FINALER CTA ========== -->
+<section class="final on-dark">
+  <div class="inner">
+    <h2>Du musst das nicht alleine schaffen.</h2>
+    <p>Vielleicht hast du schon vieles ausprobiert.<br>
+    Vielleicht bist du skeptisch, ob ein Gespräch daran etwas ändert.<br>
+    Das ist völlig verständlich – und genau richtig so.<br><br>
+    Deshalb beginnt alles nicht mit einer Entscheidung,<br>
+    sondern mit einem unverbindlichen Gespräch.</p>
+    <a class="btn" href="https://calendly.com/alanbacior/klarheits-coaching" target="_blank" rel="noopener">Den ersten Schritt gehen</a>
+    <span class="btn-note">Kostenfrei · 45 Minuten · 100 % vertraulich</span>
+  </div>
+</section>
+
+<footer>
+  <p class="alt">Noch nicht bereit für ein Gespräch? Starte mit dem kostenfreien <a href="https://www.klarheit-kompass.de/">Klarheits-Kompass</a> oder hör in den <a href="https://open.spotify.com/show/4pjOXapktrTQZlu7lTOccf">Inner Game Podcast</a> rein.</p>
+  <a href="https://links.alanbacior.de/">Alle Links</a><br><br>
+  © 2026 Alan Bacior Coaching
+  <p class="legal"><a href="https://www.alanbacior.de/impressum.html">Impressum</a> · <a href="https://www.alanbacior.de/datenschutz.html">Datenschutz</a></p>
+</footer>
+
+<!-- Sticky Mobile CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="https://calendly.com/alanbacior/klarheits-coaching" target="_blank" rel="noopener">Kostenloses Erstgespräch</a>
+</div>
+
+<script>
+  // Click-to-Play: Thumbnail wird erst beim Klick durch den YouTube-Player ersetzt.
+  // Lokal geöffnet (file://) blockiert YouTube Embeds (Fehler 153) → Klick öffnet YouTube direkt.
+  document.querySelectorAll('.yt').forEach(function (box) {
+    box.addEventListener('click', function () {
+      if (box.querySelector('iframe')) return;
+      var id = box.dataset.id;
+      if (location.protocol === 'file:') {
+        window.open('https://www.youtube.com/watch?v=' + id, '_blank', 'noopener');
+        return;
+      }
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+      iframe.title = 'YouTube-Video';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+      box.appendChild(iframe);
+    });
+  });
+
+  // Sticky-CTA (Mobile): erscheint erst, wenn der Hero aus dem Viewport ist.
+  var hero = document.querySelector('.hero');
+  var sticky = document.getElementById('stickyCta');
+  if ('IntersectionObserver' in window && hero && sticky) {
+    new IntersectionObserver(function (entries) {
+      sticky.classList.toggle('show', !entries[0].isIntersecting);
+    }, { threshold: 0 }).observe(hero);
+  } else if (sticky) {
+    sticky.classList.add('show');
+  }
+</script>
+
+</body>
+</html>
